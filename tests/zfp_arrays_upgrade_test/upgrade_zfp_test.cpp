@@ -15,6 +15,8 @@
 
 int main(){
     // Testing new Resize Function
+    std::cout << "Test Started" << std::endl;
+
     int length = 10;
     double rate = 48.0;
     zfp::array1<double> zvector(length, rate);
@@ -46,4 +48,6 @@ int main(){
     for (int i = 0; i < newer_length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
+
+    std::cout << "Test Completed" << std::endl;
 }
