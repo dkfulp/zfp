@@ -107,11 +107,25 @@ public:
   size_t size_x() const { return nx; }
 
   // resize the array (all previously stored data will be lost)
-  void resize(size_t nx, bool clear = true)
+  void resize(size_t nx, bool clear = true, bool save = false)
   {
-    this->nx = nx;
-    store.resize(nx, clear);
-    cache.clear();
+    printf("zfparray1.h resize function called\n");
+    if (save){
+      value_type* tmp = new value_type[nx]{0};
+      get(tmp);
+      this->nx = nx;
+      store.resize(nx, clear);
+      cache.clear();
+      set(tmp);
+    } else {
+      this->nx = nx;
+      store.resize(nx, clear);
+      cache.clear();
+    }
+
+    //this->nx = nx;
+    //store.resize(nx, clear);
+    //cache.clear();
   }
 
   // rate in bits per value

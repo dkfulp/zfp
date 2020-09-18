@@ -9,7 +9,10 @@ MPICC = mpiCC
 LDFLAGS = -L ../../git/zfp/lib -fopenmp -lzfp -lm
 INCLUDEFLAGS = -I ../../git/zfp/array -I ../../git/zfp/include -DZFP
 
-all: matvecmul mpi_matvecmul openmp_matvecmul mpi_datatype_example quality_test
+all: upgrade matvecmul mpi_matvecmul openmp_matvecmul mpi_datatype_example quality_test
+
+upgrade:
+	$(CXX) $(CXXFLAGS) $(INCLUDEFLAGS) upgrade_zfp_test.cpp $(LDFLAGS) -o upgrade_zfp
 
 matvecmul:
 	$(CXX) $(CXXFLAGS) $(INCLUDEFLAGS) zfp_matvecmul.cpp $(LDFLAGS) -o matvecmul
