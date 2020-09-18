@@ -6,8 +6,8 @@ CXXFLAGS = -std=c++11
 MPICC = mpiCC
 
 ## FLAGS
-LDFLAGS = -L ../../git/zfp/lib -fopenmp -lzfp -lm
-INCLUDEFLAGS = -I ../../git/zfp/array -I ../../git/zfp/include -DZFP
+LDFLAGS = -L ../../lib -fopenmp -lzfp -lm
+INCLUDEFLAGS = -I ../../array -I ../../include -DZFP
 
 all: upgrade matvecmul mpi_matvecmul openmp_matvecmul mpi_datatype_example quality_test
 
