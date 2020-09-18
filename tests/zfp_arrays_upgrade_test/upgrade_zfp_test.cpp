@@ -21,13 +21,13 @@ int main(){
 
     // Fill vector with numbers
     for (int i = 0; i < length; i++){
-        zvector[j] = i;
+        zvector[i] = i;
         zvector.flush_cache();
     }
 
     // Resize zfp array with save command
     int new_length = 10;
-    zvector.resize(new_length, save=true);
+    zvector.resize(new_length, false, true);
 
     // Print out values of array
     for (int i = 0; i < new_length; i++){
@@ -36,7 +36,7 @@ int main(){
 
     // Resize zfp array without save command
     int newer_length = 15;
-    zvector.resize(newer_length, clear=true);
+    zvector.resize(newer_length, true);
 
     // Print out values of array
     for (int i = 0; i < newer_length; i++){
