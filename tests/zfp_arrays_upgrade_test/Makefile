@@ -16,8 +16,3 @@ upgrade:
 
 clean:
 	rm upgrade_zfp
-	rm matvecmul
-	rm mpi_matvecmul
-	rm openmp_matvecmul
-	rm mpi_datatype_example
-	rm quality_test
