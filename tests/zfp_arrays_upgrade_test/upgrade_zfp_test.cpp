@@ -15,7 +15,7 @@
 
 int main(){
     // Testing new Resize Function
-    int length = 6;
+    int length = 10;
     double rate = 48.0;
     zfp::array1<double> zvector(length, rate);
 
@@ -28,7 +28,7 @@ int main(){
     }
 
     // Resize zfp array with save command
-    int new_length = 10;
+    int new_length = 15;
     zvector.resize(new_length, false, true);
 
     // Print out values of array
@@ -38,7 +38,7 @@ int main(){
     }
 
     // Resize zfp array without save command
-    int newer_length = 15;
+    int newer_length = 5;
     zvector.resize(newer_length, true);
 
     // Print out values of array
