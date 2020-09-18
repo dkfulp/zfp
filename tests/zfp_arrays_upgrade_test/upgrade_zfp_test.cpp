@@ -20,9 +20,11 @@ int main(){
     zfp::array1<double> zvector(length, rate);
 
     // Fill vector with numbers
+    std::cout << "Initializing Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         zvector[i] = i;
         zvector.flush_cache();
+        std::cout << zvector[i] << " " << std::endl;
     }
 
     // Resize zfp array with save command
@@ -30,6 +32,7 @@ int main(){
     zvector.resize(new_length, false, true);
 
     // Print out values of array
+    std::cout << "Resized Vector: " << std::endl;
     for (int i = 0; i < new_length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
@@ -39,6 +42,7 @@ int main(){
     zvector.resize(newer_length, true);
 
     // Print out values of array
+    std::cout << "Second Resized Vector: " << std::endl;
     for (int i = 0; i < newer_length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
