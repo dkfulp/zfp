@@ -111,8 +111,8 @@ public:
   {
     printf("zfparray1.h resize function called\n");
     if (save){
-      value_type* tmp = new value_type[nx]();
-      get(tmp);
+      //value_type* tmp = new value_type[nx]();
+      //get(tmp);
       this->nx = nx;
       store.resize(nx, clear);
       cache.clear();
