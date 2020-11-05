@@ -117,7 +117,7 @@ public:
       store.resize(nx, clear);
       cache.clear();
       set(tmp);
-      //free(tmp);
+      free(tmp);
     } else {
       this->nx = nx;
       store.resize(nx, clear);
