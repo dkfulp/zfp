@@ -2,7 +2,7 @@
 
 ## COMPILER
 CXX = g++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++11 -g -Wall
 MPICC = mpiCC
 
 ## FLAGS

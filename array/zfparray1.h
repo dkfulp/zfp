@@ -109,7 +109,7 @@ public:
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
-    //printf("zfparray1.h resize function called\n");
+    printf("zfparray1.h resize function called\n");
     if (save){
       value_type* tmp = new value_type[nx]{0};
       get(tmp);
@@ -117,6 +117,7 @@ public:
       store.resize(nx, clear);
       cache.clear();
       set(tmp);
+      //free(tmp);
     } else {
       this->nx = nx;
       store.resize(nx, clear);
