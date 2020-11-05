@@ -119,6 +119,7 @@ public:
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
+    printf("zfparray1.h resize function called\n");
     if (save){
       value_type* tmp = new value_type[nx]();
       get(tmp);

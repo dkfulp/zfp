@@ -31,7 +31,7 @@ int main(){
 
     // Resize zfp array with save command
     int new_length = 15;
-    zvector.resize(new_length, true);
+    zvector.resize(new_length, true, true);
 
     // Print out values of array
     std::cout << "Resized Vector: " << std::endl;
@@ -41,7 +41,7 @@ int main(){
 
     // Resize zfp array without save command
     int newer_length = 5;
-    zvector.resize(newer_length, true);
+    zvector.resize(newer_length, true, true);
 
     // Print out values of array
     std::cout << "Second Resized Vector: " << std::endl;
