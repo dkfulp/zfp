@@ -127,7 +127,7 @@ public:
       store.resize(nx, clear);
       cache.clear();
       //set(tmp);
-      delete [] tmp;
+      delete[] tmp;
     } else {
       this->nx = nx;
       store.resize(nx, clear);
