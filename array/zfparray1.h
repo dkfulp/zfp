@@ -119,15 +119,27 @@ public:
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
-    printf("zfparray1.h resize function called\n");
+    cout << "zfparray1.h resize function called" << endl;
     if (save){
-      value_type* tmp = new value_type[nx]();
-      get(tmp);
-      this->nx = nx;
-      store.resize(nx, clear);
-      cache.clear();
-      //set(tmp);
-      delete[] tmp;
+      value_type* tmp = new value_type[nx];
+      if (tmp == nullptr){
+        cout << "Error: memory could not be allocated" << endl;
+      } else {
+        get(tmp);
+        cout << "Temp Array:" << endl;
+        for (int i = 0; i < nx; i++){
+            std::cout << tmp[i] << " " << std::endl;
+        }
+
+        this->nx = nx;
+        store.resize(nx, clear);
+        cache.clear();
+        //set(tmp);
+        delete[] tmp;
+        if (tmp != nullptr){
+          cout << "Error: tmp still exists" << endl;
+        }
+      }
     } else {
       this->nx = nx;
       store.resize(nx, clear);
