@@ -37,7 +37,8 @@ protected:
     bytes = words * sizeof(uint64);
     zfp::reallocate_aligned(data, bytes, ZFP_MEMORY_ALIGNMENT);
     if (clear)
-      std::fill(static_cast<uint64*>(data), static_cast<uint64*>(data) + words, uint64(0));
+      //std::fill(static_cast<uint64*>(data), static_cast<uint64*>(data) + words, uint64(0));
+      memset(data, 0, bytes);
   }
 
   // free block store
