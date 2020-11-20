@@ -40,7 +40,7 @@ int main(){
     }
 
     // Resize zfp array without save command
-    int newer_length = 5;
+    int newer_length = 25;
     zvector.resize(newer_length, false, true);
 
     // Print out values of array
