@@ -122,17 +122,16 @@ public:
     cout << "zfparray1.h resize function called" << endl;
     if (save){
       this->data_holder = std::malloc(nx * sizeof(value_type));
-
-      get(static_cast<value_type>this->data_holder );
+      get(static_cast<value_type>(this->data_holder));
       cout << "Temp Array:" << endl;
       for (int i = 0; i < nx; i++){
-          std::cout << static_cast<value_type>this->data_holder[i] << " " << std::endl;
+          std::cout << static_cast<value_type>(this->data_holder)[i] << " " << std::endl;
       }
       this->nx = nx;
       store.resize(nx, clear);
       cache.clear();
-      set(static_cast<value_type>this->data_holder);
-      std::free(this->data_holder);
+      set(static_cast<value_type>(this->data_holder));
+      std::free((this->data_holder));
 
     }else {
       this->nx = nx;
