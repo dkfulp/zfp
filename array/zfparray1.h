@@ -106,7 +106,7 @@ public:
   // array dimensions
   size_t size_x() const { return nx; }
 
-  
+  /**
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true)
   {
@@ -114,40 +114,32 @@ public:
     store.resize(nx, clear);
     cache.clear();
   }
+  **/
   
-
-  /**
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
     cout << "zfparray1.h resize function called" << endl;
     if (save){
-      value_type* tmp = new value_type[nx];
-      if (tmp == nullptr){
-        cout << "Error: memory could not be allocated" << endl;
-      } else {
-        get(tmp);
-        cout << "Temp Array:" << endl;
-        for (int i = 0; i < nx; i++){
-            std::cout << tmp[i] << " " << std::endl;
-        }
+      this->data_holder = std::malloc(nx * sizeof(value_type));
 
-        this->nx = nx;
-        store.resize(nx, clear);
-        cache.clear();
-        //set(tmp);
-        delete[] tmp;
-        if (tmp != nullptr){
-          cout << "Error: tmp still exists" << endl;
-        }
+      get(static_cast<value_type>this->data_holder );
+      cout << "Temp Array:" << endl;
+      for (int i = 0; i < nx; i++){
+          std::cout << static_cast<value_type>this->data_holder[i] << " " << std::endl;
       }
-    } else {
+      this->nx = nx;
+      store.resize(nx, clear);
+      cache.clear();
+      set(static_cast<value_type>this->data_holder);
+      std::free(this->data_holder);
+
+    }else {
       this->nx = nx;
       store.resize(nx, clear);
       cache.clear();
     }
   }
-  **/
 
   // rate in bits per value
   double rate() const { return cache.rate(); }

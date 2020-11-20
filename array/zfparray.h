@@ -89,6 +89,7 @@ protected:
   zfp_type type;         // scalar type
   uint dims;             // array dimensionality (1, 2, 3, or 4)
   size_t nx, ny, nz, nw; // array dimensions
+  void * data_holder;    // Used to temporarily hold resize data before copying into newly resized array
 };
 
 }
