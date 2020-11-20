@@ -119,7 +119,7 @@ public:
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
-    //std::cout << "zfparray1.h resize function called" << std::endl;
+    std::cout << "zfparray1.h resize function called" << std::endl;
     if (save){
       this->data_holder = std::malloc(nx * sizeof(value_type));
       get(static_cast<value_type *>(this->data_holder));
