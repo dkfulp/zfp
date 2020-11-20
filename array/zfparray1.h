@@ -123,16 +123,15 @@ public:
     if (save){
       this->data_holder = std::malloc(nx * sizeof(value_type));
       get(static_cast<value_type *>(this->data_holder));
-      //std::cout << "Temp Array:" << std::endl;
-      //for (int i = 0; i < nx; i++){
-      //    std::cout << static_cast<value_type *>(this->data_holder)[i] << " " << std::endl;
-      //}
+      std::cout << "Temp Array:" << std::endl;
+      for (int i = 0; i < nx; i++){
+          std::cout << static_cast<value_type *>(this->data_holder)[i] << " " << std::endl;
+      }
       this->nx = nx;
       store.resize(nx, clear);
       cache.clear();
       set(static_cast<value_type *>(this->data_holder));
       std::free((this->data_holder));
-
     }else {
       this->nx = nx;
       store.resize(nx, clear);
