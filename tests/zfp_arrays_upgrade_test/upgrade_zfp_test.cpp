@@ -58,7 +58,7 @@ int main(){
         std::cout << zvector[i] << " " << std::endl;
     }
     // Resize array second to 20 items
-    length = 40;
+    length = 15;
     zvector.resize(length, true); //, true);
     // Print out values of array
     std::cout << "2nd Resize Vector: " << std::endl;
