@@ -163,8 +163,10 @@ public:
       cache.clear();
       // Set the new data
       set(static_cast<value_type *>(this->resize_tmp_new));
-      // Free ???
-      //std::free((this->data_holder));
+      // Free
+      //if (this->resize_tmp_orig)
+      std::free((this->resize_tmp_orig));
+      std::free((this->resize_tmp_new));
     }else {
       this->nx = nx;
       store.resize(nx, clear);
