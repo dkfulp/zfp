@@ -89,8 +89,8 @@ protected:
   zfp_type type;         // scalar type
   uint dims;             // array dimensionality (1, 2, 3, or 4)
   size_t nx, ny, nz, nw; // array dimensions
-  //void * resize_tmp_orig; // Original data array when resizing
-  //void * resize_tmp_new; // New data array when resizing
+  void * resize_tmp_orig; // Original data array when resizing
+  void * resize_tmp_new; // New data array when resizing
 };
 
 }
