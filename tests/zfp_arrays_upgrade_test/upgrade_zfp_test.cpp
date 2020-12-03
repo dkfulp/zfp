@@ -37,6 +37,7 @@ int main(){
     zvector[11] = 3.1415926;
     zvector[12] = 128.123;
     zvector.flush_cache();
+    
     // Print out values of array
     std::cout << length_1 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_1; i++){
