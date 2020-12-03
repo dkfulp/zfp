@@ -29,23 +29,33 @@ int main(){
         std::cout << zvector[i] << " " << std::endl;
     }
 
-    // Resize zfp array with save command
+    // Resize zfp array to 15 items
     int new_length = 15;
     zvector.resize(new_length, false, true);
 
     // Print out values of array
-    std::cout << "Resized Vector: " << std::endl;
+    std::cout << new_length << " Resized Vector: " << std::endl;
     for (int i = 0; i < new_length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
 
-    // Resize zfp array without save command
+    // Resize zfp array to 25 items
     int newer_length = 25;
     zvector.resize(newer_length, false, true);
 
     // Print out values of array
-    std::cout << "Second Resized Vector: " << std::endl;
+    std::cout << newer_length << " Resized Vector: " << std::endl;
     for (int i = 0; i < newer_length; i++){
+        std::cout << zvector[i] << " " << std::endl;
+    }
+
+    // Resize zfp array to 10 items
+    int newest_length = 10;
+    zvector.resize(newest_length, false, true);
+
+    // Print out values of array
+    std::cout << newest_length << " Resized Vector: " << std::endl;
+    for (int i = 0; i < newest_length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
 
