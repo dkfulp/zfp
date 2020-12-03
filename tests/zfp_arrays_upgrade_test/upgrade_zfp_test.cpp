@@ -21,6 +21,9 @@ int main(){
     int length = 10;
     double rate = 48.0;
     zfp::array1<double> zvector(length, rate);
+
+
+
     // Fill vector with numbers
     std::cout << "1st Initialized Vector: " << std::endl;
     for (int i = 0; i < length; i++){
@@ -28,7 +31,6 @@ int main(){
         zvector.flush_cache();
         std::cout << zvector[i] << " " << std::endl;
     }
-
     // Resize array once to 15 items 
     length = 15;
     zvector.resize(length, true); //, true);
@@ -37,6 +39,8 @@ int main(){
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
+
+
 
     // Fill vector with numbers
     std::cout << "2nd Initialized Vector: " << std::endl;
@@ -54,13 +58,15 @@ int main(){
         std::cout << zvector[i] << " " << std::endl;
     }
     // Resize array second to 20 items
-    length = 20;
+    length = 40;
     zvector.resize(length, true); //, true);
     // Print out values of array
     std::cout << "2nd Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
+
+
 
     // Fill vector with numbers
     std::cout << "3rd Initialized Vector: " << std::endl;
