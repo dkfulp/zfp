@@ -53,6 +53,8 @@ int main(){
     // Print out values of array
     std::cout << length_2 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_2; i++){
+        zvector[i] = i;
+        zvector.flush_cache();
         std::cout << zvector[i] << " " << std::endl;
     }
 
@@ -73,6 +75,18 @@ int main(){
     // Print out values of array
     std::cout << length_4 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_4; i++){
+        zvector[i] = i;
+        zvector.flush_cache();
+        std::cout << zvector[i] << " " << std::endl;
+    }
+
+    // Resize zfp array to 10 items
+    int length_5 = 10;
+    zvector.resize(length_5, true); //, true);
+
+    // Print out values of array
+    std::cout << length_5 << " Resized Vector: " << std::endl;
+    for (int i = 0; i < length_5; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
 
