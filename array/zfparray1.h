@@ -116,12 +116,15 @@ public:
   }
   **/
   
+  /**
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
     std::cout << "zfparray1.h resize function called" << std::endl;
     if (save){
-      this->data_holder = std::malloc(nx * sizeof(value_type));
+      this->data_holder = std::malloc(nx * sizeof(value_type)); // TODO: Channge nx to this->nx. Then create another data holder with the new nx. 
+                                                                // then for loop over and transfer things from the old one to the new one. 
+                                                                // then use new nx one to set which should solve the original problem.
       get(static_cast<value_type *>(this->data_holder));
       std::cout << "Temp Array:" << std::endl;
       for (int i = 0; i < nx; i++){
@@ -130,8 +133,38 @@ public:
       this->nx = nx;
       store.resize(nx, clear);
       cache.clear();
-      set(static_cast<value_type *>(this->data_holder));
+      set(static_cast<value_type *>(this->data_holder)); // TODO:
       std::free((this->data_holder));
+    }else {
+      this->nx = nx;
+      store.resize(nx, clear);
+      cache.clear();
+    }
+  }
+  **/
+
+  // resize the array (all previously stored data will be lost)
+  void resize(size_t nx, bool clear = true, bool save = false)
+  {
+    std::cout << "zfparray1.h resize function called" << std::endl;
+    if (save){
+      // Setup temporary arrays
+      this->resize_tmp_orig = std::malloc(this->nx * sizeof(value_type));
+      this->resize_tmp_new = std::malloc(nx * sizeof(value_type));
+      // Get original data
+      get(static_cast<value_type *>(this->resize_tmp_orig));
+      // Put original data into new array
+      for (int i = 0; i < nx; i++){
+        static_cast<value_type *>(this->resize_tmp_new)[i] = static_cast<value_type *>(this->resize_tmp_orig)[i];
+      }
+      // Run resize commands
+      this->nx = nx;
+      store.resize(nx, clear);
+      cache.clear();
+      // Set the new data
+      set(static_cast<value_type *>(this->resize_tmp_new));
+      // Free ???
+      //std::free((this->data_holder));
     }else {
       this->nx = nx;
       store.resize(nx, clear);
