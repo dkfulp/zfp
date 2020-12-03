@@ -154,7 +154,7 @@ public:
       // Get original data
       get(static_cast<value_type *>(this->resize_tmp_orig));
       // Put original data into new array
-      for (int i = 0; i < nx; i++){
+      for (size_t i = 0; i < nx; i++){
         static_cast<value_type *>(this->resize_tmp_new)[i] = static_cast<value_type *>(this->resize_tmp_orig)[i];
       }
       // Run resize commands
