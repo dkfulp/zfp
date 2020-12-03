@@ -106,7 +106,7 @@ public:
   // array dimensions
   size_t size_x() const { return nx; }
 
-  /**
+  
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true)
   {
@@ -114,35 +114,9 @@ public:
     store.resize(nx, clear);
     cache.clear();
   }
-  **/
   
-  /**
-  // resize the array (all previously stored data will be lost)
-  void resize(size_t nx, bool clear = true, bool save = false)
-  {
-    std::cout << "zfparray1.h resize function called" << std::endl;
-    if (save){
-      this->data_holder = std::malloc(nx * sizeof(value_type)); // TODO: Channge nx to this->nx. Then create another data holder with the new nx. 
-                                                                // then for loop over and transfer things from the old one to the new one. 
-                                                                // then use new nx one to set which should solve the original problem.
-      get(static_cast<value_type *>(this->data_holder));
-      std::cout << "Temp Array:" << std::endl;
-      for (int i = 0; i < nx; i++){
-          std::cout << static_cast<value_type *>(this->data_holder)[i] << " " << std::endl;
-      }
-      this->nx = nx;
-      store.resize(nx, clear);
-      cache.clear();
-      set(static_cast<value_type *>(this->data_holder)); // TODO:
-      std::free((this->data_holder));
-    }else {
-      this->nx = nx;
-      store.resize(nx, clear);
-      cache.clear();
-    }
-  }
-  **/
 
+  /**
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
@@ -173,6 +147,7 @@ public:
       cache.clear();
     }
   }
+  **/
 
   // rate in bits per value
   double rate() const { return cache.rate(); }
