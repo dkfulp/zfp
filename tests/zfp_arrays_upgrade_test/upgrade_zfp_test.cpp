@@ -31,7 +31,7 @@ int main(){
 
     // Resize zfp array to 15 items
     int length_1 = 15;
-    zvector.resize(length_1, false); //, true);
+    zvector.resize(length_1, true); //, true);
 
     // Set a couple of items to see if they persist 
     zvector[10] = 3.1415926;                        
@@ -48,7 +48,7 @@ int main(){
 
     // Resize zfp array to 20 items
     int length_2 = 12;
-    zvector.resize(length_2, false); //, true);
+    zvector.resize(length_2, true); //, true);
 
     // Print out values of array
     std::cout << length_2 << " Resized Vector: " << std::endl;
@@ -58,7 +58,7 @@ int main(){
 
     // Resize zfp array to 10 items
     int length_3 = 25;
-    zvector.resize(length_3, false); //, true);
+    zvector.resize(length_3, true); //, true);
 
     // Print out values of array
     std::cout << length_3 << " Resized Vector: " << std::endl;
@@ -68,7 +68,7 @@ int main(){
 
     // Resize zfp array to 25 items
     int length_4 = 20;
-    zvector.resize(length_4, false); //, true);
+    zvector.resize(length_4, true); //, true);
 
     // Print out values of array
     std::cout << length_4 << " Resized Vector: " << std::endl;
