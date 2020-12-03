@@ -51,6 +51,7 @@ int main(){
     zvector.resize(length_2, true); //, true);
 
     // Print out values of array
+    std::cout << "Initializing Vector: " << std::endl;
     std::cout << length_2 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_2; i++){
         zvector[i] = i;
@@ -73,6 +74,7 @@ int main(){
     zvector.resize(length_4, true); //, true);
 
     // Print out values of array
+    std::cout << "Initializing Vector: " << std::endl;
     std::cout << length_4 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_4; i++){
         zvector[i] = i;
