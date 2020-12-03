@@ -29,74 +29,65 @@ int main(){
         std::cout << zvector[i] << " " << std::endl;
     }
 
-    // Resize array to 15 items
+    // Resize array once to 15 items 
     length = 15;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "1st Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
 
+    // Fill vector with numbers
     std::cout << "2nd Initialized Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         zvector[i] = i;
         zvector.flush_cache();
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Resize array to 12 items
+    // Resize array once to 12 items
     length = 12;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "1st Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Resize array to 20 items
+    // Resize array second to 20 items
     length = 20;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "2nd Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
 
+    // Fill vector with numbers
     std::cout << "3rd Initialized Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         zvector[i] = i;
         zvector.flush_cache();
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Resize array to 18 items
+    // Resize array once to 18 items
     length = 18;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "1st Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Resize array to 25 items
+    // Resize array second to 25 items
     length = 25;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "2nd Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Resize array to 30 items
+    // Resize array third to 30 items
     length = 30;
     zvector.resize(length, true); //, true);
-
     // Print out values of array
     std::cout << "3rd Resize Vector: " << std::endl;
     for (int i = 0; i < length; i++){
