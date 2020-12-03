@@ -106,7 +106,7 @@ public:
   // array dimensions
   size_t size_x() const { return nx; }
 
-  
+  /**
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true)
   {
@@ -114,9 +114,9 @@ public:
     store.resize(nx, clear);
     cache.clear();
   }
+  **/
 
-
-  /**
+  
   // resize the array (all previously stored data will be lost)
   void resize(size_t nx, bool clear = true, bool save = false)
   {
@@ -147,7 +147,6 @@ public:
       cache.clear();
     }
   }
-  **/
 
 
   // rate in bits per value
