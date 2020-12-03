@@ -43,16 +43,16 @@ int main(){
     int length_2 = 20;
     zvector.resize(length_2, false, true);
 
+    // Set a couple of items to see if they persist
+    zvector[11] = 3.1415926;
+    zvector[12] = 128.123;
+    zvector.flush_cache();
+
     // Print out values of array
     std::cout << length_2 << " Resized Vector: " << std::endl;
     for (int i = 0; i < length_2; i++){
         std::cout << zvector[i] << " " << std::endl;
     }
-
-    // Set a couple of items to see if they persist
-    zvector[11] = 3.1415926;
-    zvector[12] = 128.123;
-    zvector.flush_cache();
 
     // Resize zfp array to 10 items
     int length_3 = 15;
